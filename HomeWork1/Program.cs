@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -9,16 +10,9 @@ namespace HomeWork1
     internal class Program
     {
         static void Main(string[] args)
-        {
-            string name;
-            string lastName;
-            Console.WriteLine("First Programm");
-            Console.WriteLine("Enter your First Name: ");
-            name=Console.ReadLine();
-            Console.WriteLine("Enter your Second Name: ");
-            lastName=Console.ReadLine();
-            Console.WriteLine($"Hello, {name} {lastName}");
-            Console.ReadLine();
+        { 
+            Console.WriteLine("Hello Word");
+
         }
     }
 }
