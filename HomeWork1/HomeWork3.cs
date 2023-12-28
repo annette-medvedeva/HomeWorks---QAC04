@@ -6,7 +6,7 @@ namespace HomeWorks
     internal class HomeWork3
     {
         static void Main(string[] args)
-        {
+        { 
             Console.OutputEncoding = Encoding.UTF8;
             //func3_1();
             //func3_2();
