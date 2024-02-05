@@ -8,16 +8,22 @@ namespace HomeWorks
 {
     public abstract class Employee:IWRestable
     {
-        public String name;
-        public int age;
+        public String Name;
+        public int Age;
 
         public Employee() { }
 
+        protected Employee(string name)
+        {
+            Name = name;
+        }
+
         public abstract void Work();
-        public virtual bool Rest(string day) 
+        public virtual bool Rest(DayOfWeek day) 
         {
             return true;
         }
+        public abstract void Schedule();
 
     }
 }

@@ -8,6 +8,6 @@ namespace HomeWorks
 {
     internal interface IRestable
     {
-        bool Rest(string day);
+        bool Rest(DayOfWeek day);
     }
 }

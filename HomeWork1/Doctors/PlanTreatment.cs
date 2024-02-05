@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HomeWork1
 {
-    abstract internal class PlanTreatment:ITreatable
+     public abstract class PlanTreatment:ITreatable
     {
         public PlanTreatment() { }
 
