@@ -74,7 +74,7 @@ namespace HomeWorks
 
                                 if (selectedDoctor != null)
                                 {
-                                    Console.WriteLine($"Вы выбрали {selectedDoctor?.GetType()}, Имя вашего врача {selectedDoctor?.Name}");
+                                    Console.WriteLine($"Вы выбрали {selectedDoctor?.Specialization}, Имя вашего врача {selectedDoctor?.Name}");
                                     selectedDoctor?.Schedule();
                                 }
 
@@ -92,13 +92,35 @@ namespace HomeWorks
                                     Console.WriteLine("6 - Суббота");
                                     Console.WriteLine("7 - Воскресенье");
 
-                                        Console.Write("Введите номер дня: ");
-                                        if (int.TryParse(Console.ReadLine(), out int dayNumber) && dayNumber >= 1 && dayNumber <= 7)
+                                    if (int.TryParse(Console.ReadLine(), out int dayNumber) && dayNumber >= 1 && dayNumber <= 7)
+                                    {
+                                        switch (dayNumber)
                                         {
-                                            selectedDay = (DayOfWeek)((dayNumber + 5) % 7);
-                                            isValidDay = true;
+                                            case 1:
+                                                selectedDay = DayOfWeek.Monday;
+                                                break;
+                                            case 2:
+                                                selectedDay = DayOfWeek.Tuesday;
+                                                break;
+                                            case 3:
+                                                selectedDay = DayOfWeek.Wednesday;
+                                                break;
+                                            case 4:
+                                                selectedDay = DayOfWeek.Thursday;
+                                                break;
+                                            case 5:
+                                                selectedDay = DayOfWeek.Friday;
+                                                break;
+                                            case 6:
+                                                selectedDay = DayOfWeek.Saturday;
+                                                break;
+                                            case 7:
+                                                selectedDay = DayOfWeek.Sunday;
+                                                break;
                                         }
-                                        else
+                                        isValidDay = true;
+                                    }
+                                    else
                                         {
                                             Console.WriteLine("Некорректный ввод. Пожалуйста, введите число от 1 до 7.");
                                         }
@@ -110,7 +132,7 @@ namespace HomeWorks
 
                                         if (selectedDoctor.Rest(selectedDay))
                                         {
-                                            Console.WriteLine($"{selectedDoctor?.GetType().Name} отдыхает в этот день.");
+                                            Console.WriteLine($"{selectedDoctor?.Name} отдыхает в этот день.");
                                         }
                                         else
                                         {
