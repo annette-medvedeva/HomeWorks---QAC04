@@ -43,11 +43,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Administrator\Administration.cs" />
+    <Compile Include="Clinic.cs" />
+    <Compile Include="Doctors\Dentist.cs" />
+    <Compile Include="Doctors\Doctor.cs" />
+    <Compile Include="Enums\SpecializationEnum.cs" />
+    <Compile Include="Logger\Logger.cs" />
+    <Compile Include="Patients\PatientEnqueuedEventArgs.cs" />
+    <Compile Include="Employees\Employee.cs" />
+    <Compile Include="HomeWork6.cs" />
+    <Compile Include="Interfaces\IRestable.cs" />
+    <Compile Include="Interfaces\ITreatable.cs" />
+    <Compile Include="Interfaces\IWorkable.cs" />
+    <Compile Include="Interfaces\IWRestable.cs" />
+    <Compile Include="Patients\Patient.cs" />
+    <Compile Include="Doctors\PlanTreatment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Doctors\Surgeon.cs" />
+    <Compile Include="Doctors\Therapist.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
