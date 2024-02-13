@@ -12,11 +12,11 @@ namespace HomeWorks
     {
         public string Name { get; set; }
         public Doctor SelectedDoctor { get; set; }
-        public string SelectedDay { get; set; }
+        public DayOfWeek SelectedDay { get; set; }
         public string SelectedProcedure { get; set; }
         public int QueueNumber { get; set; }
 
-        public Patient(string name, Doctor selectedDoctor, string selectedDay, string selectedProcedure, int queueNumber)
+        public Patient(string name, Doctor selectedDoctor, DayOfWeek selectedDay, string selectedProcedure, int queueNumber)
         {
             Name = name;
             SelectedDoctor = selectedDoctor;

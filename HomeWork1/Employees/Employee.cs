@@ -10,12 +10,14 @@ namespace HomeWorks
     {
         public String Name;
         public int Age;
+        public String Specialization;
 
         public Employee() { }
 
-        protected Employee(string name)
+        protected Employee(string name, String specialization)
         {
             Name = name;
+            Specialization = specialization;
         }
 
         public abstract void Work();
@@ -23,7 +25,6 @@ namespace HomeWorks
         {
             return true;
         }
-        public abstract void Schedule();
-
+        
     }
 }

@@ -8,8 +8,9 @@ namespace HomeWorks
 {
     internal class Therapist: Doctor
     {
-        public Therapist(String name) : base(name)
+        public Therapist(String name, String specialization) : base(name, specialization)
         {
+            this.Specialization = "Терапевт";
             InitializeSchedule();
         }
         override public void Treat()

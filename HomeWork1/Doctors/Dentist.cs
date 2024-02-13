@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static HomeWork1.Enums.SpecializationEnum;
 
 namespace HomeWorks
 {
     internal class Dentist:Doctor
     {
-        public Dentist(String name) : base(name)
+        public Dentist(String name, String specialization) : base(name, specialization)
         {
+            this.Specialization = SpecializationType.Dentist.ToString();
             InitializeSchedule();
         }
 

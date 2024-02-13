@@ -1,17 +1,20 @@
-﻿using System;
+﻿using HomeWork1.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static HomeWork1.Enums.SpecializationEnum;
 
 namespace HomeWorks
 {
     internal class Surgeon:Doctor
     {
         private String bodyPart;
-        public Surgeon(String name , String bodyPart) :base(name)
+        public Surgeon(String name , String bodyPart, String specialization) :base(name, specialization)
         {
-        this.bodyPart = bodyPart;
+            this.Specialization = SpecializationType.Surgeon.ToString();
+            this.bodyPart = bodyPart;
             InitializeSchedule();
         }
         override public void Treat()
@@ -31,7 +34,7 @@ namespace HomeWorks
         private void InitializeSchedule()
         {
             schedule.Add(DayOfWeek.Monday, "с 14:00 до 20:00");
-            schedule.Add(DayOfWeek.Tuesday, "выходной");
+            schedule.Add(DayOfWeek.Tuesday, "с 14:00 до 20:00");
             schedule.Add(DayOfWeek.Wednesday, "с 8:00 до 14:00");
             schedule.Add(DayOfWeek.Thursday, "выходной");
             schedule.Add(DayOfWeek.Friday, "выходной");
@@ -49,7 +52,7 @@ namespace HomeWorks
         }
         public override bool Rest(DayOfWeek day)
         {
-            return day == DayOfWeek.Tuesday || day == DayOfWeek.Friday || day == DayOfWeek.Sunday || day == DayOfWeek.Thursday;
+            return  day == DayOfWeek.Friday || day == DayOfWeek.Sunday || day == DayOfWeek.Thursday;
         }
         public override string ProvideTreatmentOptions()
         {

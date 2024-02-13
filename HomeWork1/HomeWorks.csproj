@@ -44,9 +44,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Administrator\Administration.cs" />
+    <Compile Include="Clinic.cs" />
     <Compile Include="Doctors\Dentist.cs" />
     <Compile Include="Doctors\Doctor.cs" />
-    <Compile Include="Doctors\PatientEnqueuedEventArgs.cs" />
+    <Compile Include="Enums\SpecializationEnum.cs" />
+    <Compile Include="Logger\Logger.cs" />
+    <Compile Include="Patients\PatientEnqueuedEventArgs.cs" />
     <Compile Include="Employees\Employee.cs" />
     <Compile Include="HomeWork6.cs" />
     <Compile Include="Interfaces\IRestable.cs" />

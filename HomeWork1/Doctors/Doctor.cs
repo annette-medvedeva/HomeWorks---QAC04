@@ -14,15 +14,16 @@ namespace HomeWorks
         public event EventHandler<PatientEnqueuedEventArgs> PatientEnqueued;
         public int PublicQueueCount => QueueCount;
         protected int QueueCount { get; private set; }
-        public Doctor(String name)
+        public Doctor(String name, String specialization)
         {
             this.Name = name;
+            this.Specialization = specialization;
             QueueCount = 0;
 
         }
         virtual public void Treat()
         {
-            Console.WriteLine("Doctor treats " + Name);
+            Console.WriteLine("Сегодня доктора на смене: " + Name);
         }
         public override void Work()
         {
@@ -55,10 +56,8 @@ namespace HomeWorks
             return scheduleText.ToString();
         }
 
-        override public void Schedule() 
-        { 
-            Console.WriteLine($"Расписание: {GetScheduleText()}"); 
-        }
+        public abstract void Schedule(); 
+        
         public abstract string ProvideTreatmentOptions();
         protected virtual void OnPatientEnqueued(Patient patient)
         {
@@ -69,9 +68,7 @@ namespace HomeWorks
             patientQueue.Enqueue(patient);
             Console.WriteLine($"Очередь к доктору {Name}:");
             OnPatientEnqueued(patient); 
-            QueueCount++;
-            patient.QueueNumber = QueueCount;
-            Console.WriteLine($"Пациент {patient.Name} добавлен в очередь к {Name}. Номер в очереди: {patient.QueueNumber}");
+            Console.WriteLine($"Пациент {patient.Name} добавлен в очередь к {Name}. Номер в очереди: {patientQueue.Count}");
         }
 
         public void DisplayPatientQueue()

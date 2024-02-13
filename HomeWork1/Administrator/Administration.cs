@@ -9,7 +9,7 @@ namespace HomeWorks
      public class Administration:Employee
     { 
         
-        public Administration(String name): base(name) 
+        public Administration(String name, String specialization ): base(name, specialization) 
         { 
             InitializeSchedule(); 
         }
@@ -17,7 +17,7 @@ namespace HomeWorks
         {
             
         }
-        public override void Schedule()
+        public  void Schedule()
         {
             Console.WriteLine($"Расписание:\n {GetScheduleText()}");
         }
